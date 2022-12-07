@@ -5,7 +5,7 @@ export interface ParamsInterface {
   operator_id?: number;
 }
 
-export type ResultInterface = string[];
+export type ResultInterface = { datetime: Date; _id: number; uuid: string }[];
 
 export const handlerConfig = {
   service: 'carpool',
