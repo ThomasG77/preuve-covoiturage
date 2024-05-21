@@ -32,7 +32,7 @@ export class IncentiveCampaignsRepositoryProvider implements IncentiveCampaignsR
       b.geom IS NOT NULL
       ${
         params.year !== undefined
-          ? `AND (right(a.date_debut,4) = $1::varchar AND right(a.date_fin,4) = $1::varchar)`
+          ? `AND right(a.date_debut,4) = $1::varchar`
           : `${params.code !== undefined ? `` : `AND to_date(a.date_fin,'DD/MM/YYYY') > now()`}`
       }
       ;`,
